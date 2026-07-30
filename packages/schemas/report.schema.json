@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BugReproducerReport",
+  "type": "object",
+  "properties": {
+    "run_id": { "type": "string", "format": "uuid" },
+    "issue_id": { "type": "string", "format": "uuid" },
+    "overall_confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+    "facts": {
+      "type": "object",
+      "properties": {
+        "error_message": { "type": ["string", "null"] },
+        "stack_trace": { "type": ["string", "null"] },
+        "file_paths": { "type": "array", "items": { "type": "string" } },
+        "explicit_versions": { "type": "object" }
+      },
+      "required": ["file_paths", "explicit_versions"]
+    },
+    "inferred_assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": { "type": "string" },
+          "value": { "type": "string" },
+          "reasoning": { "type": "string" },
+          "confidence": { "type": "number" }
+        },
+        "required": ["field", "value", "reasoning", "confidence"]
+      }
+    },
+    "unknowns": { "type": "array", "items": { "type": "string" } },
+    "repro_steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_number": { "type": "integer" },
+          "action": { "type": "string" },
+          "expected_outcome": { "type": "string" },
+          "confidence": { "type": "number" },
+          "sandbox_verified": { "type": "boolean" }
+        },
+        "required": ["step_number", "action"]
+      }
+    },
+    "test_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "framework": { "type": "string" },
+          "file_path": { "type": "string" },
+          "code_content": { "type": "string" }
+        },
+        "required": ["framework", "file_path", "code_content"]
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": { "type": "string" },
+          "title": { "type": "string" },
+          "evidence": { "type": "array", "items": { "type": "string" } },
+          "probability": { "type": "number" }
+        },
+        "required": ["category", "title"]
+      }
+    }
+  },
+  "required": ["run_id", "issue_id", "overall_confidence", "facts", "inferred_assumptions", "unknowns", "repro_steps", "test_artifacts", "hypotheses"]
+}
