@@ -11,17 +11,15 @@ build-backend = "setuptools.build_meta"  # If not defined, then legacy behavior 
 
 
 [project]
-name = "sweagent"
-dynamic = ["version"]
-description = "The official SWE-agent package - an open source Agent Computer Interface for running language models as software engineers."
+name = "bug-reproducer-assistant"
+version = "1.0.0"
+description = "AI Platform for Automated Bug Reproduction - transforms unstructured bug reports into deterministic, machine-verifiable reproduction artifacts."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
-keywords = ["nlp", "agents", "code"]
+keywords = ["ai", "bug", "reproduction", "llm", "groq"]
 authors = [
-    {name = "Carlos E. Jimenez", email = "carlosej@princeton.edu" },
-    {name = "John Yang", email = "byjohnyang@gmail.com" },
-    {name = "Kilian Lieret", email = "kilian.lieret@posteo.de" },
+    {name = "Priyadharsan VK" },
 ]
 
 # Classifiers help users find your project by categorizing it.
@@ -64,7 +62,7 @@ dependencies = [
 ]
 
 [project.scripts]
-sweagent = "sweagent.run.run:main"
+bug-reproducer = "apps.api.main:app"
 
 [project.optional-dependencies]
 dev = [
@@ -84,18 +82,15 @@ dev = [
 [tool.setuptools]
 include-package-data = true
 
-[tool.setuptools.dynamic]
-version = {attr = "sweagent.__version__"}
-
 [tool.setuptools.packages.find]
 where = ["."]
+include = ["apps*", "packages*"]
 namespaces = false
 
 [project.urls]
-"Homepage" = "https://swe-agent.com"
-"Bug Reports" = "http://github.com/SWE-agent/SWE-agent/issues"
-"Documentation" = "https://swe-agent.com/latest/"
-"Source" = "http://github.com/SWE-agent/SWE-agent"
+"Homepage" = "https://github.com/PriyadharsanVK/Bug-Reproducer-Assisstant"
+"Bug Reports" = "https://github.com/PriyadharsanVK/Bug-Reproducer-Assisstant/issues"
+"Source" = "https://github.com/PriyadharsanVK/Bug-Reproducer-Assisstant"
 
 
 [tool.pytest.ini_options]

@@ -40,6 +40,8 @@ jobs:
       - name: Install uv
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
       - run: uv pip install --python ${Python_ROOT_DIR} '.[dev]'
       - name: Build Documentation
         if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/v0.7'
