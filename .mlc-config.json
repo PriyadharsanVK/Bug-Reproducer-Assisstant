@@ -1,0 +1,21 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://swe-bench\\.slack\\.com"
+    },
+    {
+      "pattern": "^https://enigma-agent\\.com"
+    },
+    {
+      "pattern": "^https://swesmith\\.com"
+    },
+    {
+      "pattern": "^http://github\\.com"
+    }
+  ],
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206]
+}

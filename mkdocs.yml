@@ -1,0 +1,95 @@
+site_name: Bug Reproducer Assistant
+site_url: https://priyadharsanvk.github.io/Bug-Reproducer-Assisstant/
+site_description: AI Platform for Automated Bug Reproduction
+site_author: Priyadharsan VK
+
+repo_name: PriyadharsanVK/Bug-Reproducer-Assisstant
+repo_url: https://github.com/PriyadharsanVK/Bug-Reproducer-Assisstant
+
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+  - include-markdown
+
+nav:
+  - Home: index.md
+  - Installation:
+    - Getting Started: installation/index.md
+    - API Keys: installation/keys.md
+    - From Source: installation/source.md
+    - GitHub Codespaces: installation/codespaces.md
+    - Tips & Tricks: installation/tips.md
+    - Migration Guide: installation/migration.md
+    - Changelog: installation/changelog.md
+  - Usage:
+    - Overview: usage/index.md
+    - Hello World: usage/hello_world.md
+    - CLI Tutorial: usage/cl_tutorial.md
+    - CLI Reference: usage/cli.md
+    - Batch Mode: usage/batch_mode.md
+    - Multimodal: usage/multimodal.md
+    - Coding Challenges: usage/coding_challenges.md
+    - Competitive Runs: usage/competitive_runs.md
+    - Adding Custom Tools: usage/adding_custom_tools.md
+    - Trajectories: usage/trajectories.md
+    - LeetCode Example: usage/leetcode_example.md
+    - Inspector: usage/inspector.md
+    - What's Next: usage/whats_next.md
+  - Configuration:
+    - Overview: config/config.md
+    - Models: config/models.md
+    - Environments: config/environments.md
+    - Environment Variables: config/env.md
+    - Templates: config/templates.md
+    - Tools: config/tools.md
+    - Demonstrations: config/demonstrations.md
+  - Background:
+    - Overview: background/index.md
+    - Architecture: background/architecture.md
+    - Agent-Computer Interface: background/aci.md
+  - Reference:
+    - Overview: reference/index.md
+    - Agent: reference/agent.md
+    - Agent Config: reference/agent_config.md
+    - Environment: reference/env.md
+    - Environment Config: reference/env_config.md
+    - Model Config: reference/model_config.md
+    - Tools Config: reference/tools_config.md
+    - Run Single Config: reference/run_single_config.md
+    - Run Batch Config: reference/run_batch_config.md
+    - Bundle Config: reference/bundle_config.md
+    - Template Config: reference/template_config.md
+    - History Processor Config: reference/history_processor_config.md
+    - Parsers: reference/parsers.md
+    - Problem Statements: reference/problem_statements.md
+    - Batch Instances: reference/batch_instances.md
+    - Repo: reference/repo.md
+    - Exceptions: reference/exceptions.md
+  - Development:
+    - Contributing: dev/contribute.md
+    - Formatting Conflicts: dev/formatting_conflicts.md
+  - FAQ: faq.md
